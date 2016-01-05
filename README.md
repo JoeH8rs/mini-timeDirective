@@ -2,7 +2,7 @@ mini-timeDirective
 ==================
 
 ##Objectives
-The purpose of this Mini Project is to get you used to creating custom Directives. Custom directives are one of the most powerful aspects of Angular because they allow you to create re-usable components.
+The purpose of this Mini Project is to get you use to creating custom Directives. Custom directives are one of the most powerful aspects of Angular, because they allow you to create re-usable components.
 
 ###Step 1: Angular Skeleton 
 * Fork this repo, then clone your fork.
