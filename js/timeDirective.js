@@ -1,35 +1,14 @@
 var app = angular.module('timeApp');
 
-app.directive('myCurrentTime', ['$interval', 'dateFilter', function($interval, dateFilter) {
-
-  function link(scope, element, attrs) {
-    var format,
-        timeoutId;
-
-    function updateTime() {
-      element.text(dateFilter(new Date(), format));
-    }
-
-    scope.$watch(attrs.myCurrentTime, function(value) {
-      format = value;
-      updateTime();
-    });
-
-    element.on('$destroy', function() {
-      $interval.cancel(timeoutId);
-    });
-
-  
-    timeoutId = $interval(function() {
-      updateTime(); 
-    }, 1000);
-  }
-
+app.directive('showTime', function(){
   return {
-    link: link
-  };
-}]);
-
-  
+    restrict: 'E',
+    template: '<div> The current time is {{time}} </div>',
+    link: function(scope, element, attrs){
+      var currentTime = new Date();
+      scope.time = currentTime.toString();
+    }
+  }
+});
   
   
